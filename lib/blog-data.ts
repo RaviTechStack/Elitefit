@@ -1,0 +1,100 @@
+export const blogPosts = [
+  {
+    title: "The Science of Hypertrophy: How Muscles Actually Grow",
+    slug: "science-of-hypertrophy",
+    description:
+      "Understanding the physiological mechanisms behind muscle growth and how to optimize your training for maximum hypertrophy.",
+    image: "/placeholder.svg?height=400&width=600",
+    category: "Training",
+    date: "Mar 15, 2023",
+    readTime: "8 min read",
+    author: "Ravi Singh",
+  },
+  {
+    title: "Nutrition Myths Debunked: What Actually Works for Fat Loss",
+    slug: "nutrition-myths-debunked",
+    description:
+      "Cutting through the noise and examining evidence-based nutrition strategies that deliver sustainable fat loss results.",
+    image: "/placeholder.svg?height=400&width=600",
+    category: "Nutrition",
+    date: "Feb 28, 2023",
+    readTime: "10 min read",
+    author: "Ravi Singh",
+  },
+  {
+    title: "Progressive Overload: The Key Principle You're Probably Neglecting",
+    slug: "progressive-overload",
+    description:
+      "How to properly implement progressive overload in your training program for continuous strength and muscle gains.",
+    image: "/placeholder.svg?height=400&width=600",
+    category: "Training",
+    date: "Feb 12, 2023",
+    readTime: "7 min read",
+    author: "Ravi Singh",
+  },
+  {
+    title: "From Skinny to Strong: Rahul's 12-Month Transformation Story",
+    slug: "skinny-to-strong-transformation",
+    description:
+      "How Rahul went from 60kg to 78kg of lean muscle mass with strategic nutrition and training protocols.",
+    image: "/placeholder.svg?height=400&width=600",
+    category: "Transformation",
+    date: "Jan 25, 2023",
+    readTime: "6 min read",
+    author: "Ravi Singh",
+  },
+  {
+    title: "The Ultimate Guide to Protein: How Much Do You Really Need?",
+    slug: "ultimate-protein-guide",
+    description:
+      "Breaking down the science of protein requirements for different fitness goals, from fat loss to muscle building.",
+    image: "/placeholder.svg?height=400&width=600",
+    category: "Nutrition",
+    date: "Jan 10, 2023",
+    readTime: "9 min read",
+    author: "Ravi Singh",
+  },
+  {
+    title: "Recovery Strategies: Why Sleep Might Be Your Most Powerful Muscle Builder",
+    slug: "recovery-sleep-strategies",
+    description: "The often overlooked importance of sleep for recovery, hormone optimization, and muscle growth.",
+    image: "/placeholder.svg?height=400&width=600",
+    category: "Recovery",
+    date: "Dec 18, 2022",
+    readTime: "8 min read",
+    author: "Ravi Singh",
+  },
+  {
+    title: "The Ultimate Guide to Body Recomposition",
+    slug: "body-recomposition-guide",
+    description:
+      "How to build muscle and lose fat simultaneously - the holy grail of fitness transformation explained with scientific protocols.",
+    image: "/placeholder.svg?height=800&width=600",
+    category: "Training",
+    date: "Mar 20, 2023",
+    readTime: "15 min read",
+    author: "Ravi Singh",
+  },
+  {
+    title: "5 Common Mistakes That Are Killing Your Gains",
+    slug: "common-training-mistakes",
+    description: "Identify and fix these training errors that might be preventing you from making progress in the gym.",
+    image: "/placeholder.svg?height=400&width=600",
+    category: "Training",
+    date: "Apr 5, 2023",
+    readTime: "6 min read",
+    author: "Ravi Singh",
+  },
+  {
+    title: "Meal Prep 101: Save Time and Stay Consistent",
+    slug: "meal-prep-guide",
+    description:
+      "A comprehensive guide to efficient meal preparation for fitness enthusiasts, with time-saving tips and recipes.",
+    image: "/placeholder.svg?height=400&width=600",
+    category: "Nutrition",
+    date: "Apr 12, 2023",
+    readTime: "11 min read",
+    author: "Ravi Singh",
+  },
+]
+
