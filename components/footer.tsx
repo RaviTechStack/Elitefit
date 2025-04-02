@@ -35,12 +35,12 @@ export default function Footer() {
             >
               Services
             </Link>
-            <Link
+            {/* <Link
               href="/blog"
               className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-blue-400 transition-colors"
             >
               Blog
-            </Link>
+            </Link> */}
             <Link
               href="/contact"
               className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-blue-400 transition-colors"

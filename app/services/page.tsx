@@ -28,7 +28,7 @@ export default function ServicesPage() {
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/image_search_1742968549847.jp"
             alt="Services Background"
             fill
             className="object-cover opacity-30"
@@ -89,7 +89,7 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[400px] w-full rounded-xl overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=800&width=600"
+                    src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/image_search_1742967712114.jpg"
                     alt="Strength Training"
                     fill
                     className="object-cover"
@@ -117,7 +117,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                   <Link href="/contact?service=strength">
-                    <Button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white">
+                    <Button className="bg-gradient-to-r my-3 from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white">
                       Get Started
                     </Button>
                   </Link>
@@ -129,7 +129,7 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[400px] w-full rounded-xl overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=800&width=600"
+                    src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/image_search_1742967755121.jpg"
                     alt="Fat Loss Transformation"
                     fill
                     className="object-cover"
@@ -157,7 +157,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                   <Link href="/contact?service=fat-loss">
-                    <Button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white">
+                    <Button className="bg-gradient-to-r my-3 from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white">
                       Get Started
                     </Button>
                   </Link>
@@ -169,7 +169,7 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[400px] w-full rounded-xl overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=800&width=600"
+                    src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/image_search_1742967775381.jpg"
                     alt="Nutrition Planning"
                     fill
                     className="object-cover"
@@ -197,7 +197,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                   <Link href="/contact?service=nutrition">
-                    <Button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white">
+                    <Button className="bg-gradient-to-r my-3 from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white">
                       Get Started
                     </Button>
                   </Link>
@@ -209,7 +209,7 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[400px] w-full rounded-xl overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=800&width=600"
+                    src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/image_search_1742967824563.jpg"
                     alt="Online Coaching"
                     fill
                     className="object-cover"
@@ -237,7 +237,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                   <Link href="/contact?service=online">
-                    <Button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white">
+                    <Button className="bg-gradient-to-r my-3 from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white">
                       Get Started
                     </Button>
                   </Link>

@@ -16,7 +16,7 @@ export default function TrainerProfile() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] w-full rounded-xl overflow-hidden border-2 border-zinc-800">
               <Image
-                src="/placeholder.svg?height=1000&width=800"
+                src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/image_search_1742967864026.jpg"
                 alt="Ravi Singh - Elite Fitness Coach"
                 fill
                 className="object-cover"
@@ -191,32 +191,32 @@ export default function TrainerProfile() {
 
             <div className="grid grid-cols-2 gap-4">
               <Image
-                src="/placeholder.svg?height=400&width=300"
+                src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_185246.jpg"
                 alt="Client Transformation"
                 width={300}
                 height={400}
                 className="rounded-lg object-cover h-full w-full"
               />
               <Image
-                src="/placeholder.svg?height=400&width=300"
+                src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_185415.jpg"
                 alt="Client Transformation"
                 width={300}
                 height={400}
                 className="rounded-lg object-cover h-full w-full mt-8"
               />
               <Image
-                src="/placeholder.svg?height=400&width=300"
+                src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_185348.jpg"
                 alt="Client Transformation"
                 width={300}
                 height={400}
                 className="rounded-lg object-cover h-full w-full mt-8"
               />
               <Image
-                src="/placeholder.svg?height=400&width=300"
+                src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_185322.jpg"
                 alt="Client Transformation"
                 width={300}
                 height={400}
-                className="rounded-lg object-cover h-full w-full"
+                className="rounded-lg object-cover h-full w-full mt-8"
               />
             </div>
           </div>
@@ -231,12 +231,14 @@ export default function TrainerProfile() {
             <p className="text-zinc-300 md:text-lg">
               Book a free consultation call to discuss your fitness goals and how we can help you achieve them.
             </p>
+            <Link href="/contact">
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white rounded-full px-8 py-6 text-lg font-medium"
             >
               Schedule Your Call Now
             </Button>
+            </Link>
           </div>
         </div>
       </section>

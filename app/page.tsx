@@ -12,15 +12,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
+          <img
+            src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/main/images/gym.gif"
+            alt="Gym Animation"
             className="object-cover w-full h-full opacity-60"
-            poster="/placeholder.svg?height=1080&width=1920"
-          >
-            <source src="#" type="video/mp4" />
-          </video>
+          />
+
           <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/60 to-white dark:from-black/70 dark:via-black/60 dark:to-black"></div>
         </div>
 
@@ -57,10 +54,10 @@ export default function Home() {
           <div className="flex flex-col items-center space-y-6">
             <p className="text-sm text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Featured In</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-70">
-              <img src="/placeholder.svg?height=60&width=150" alt="Men's Health" className="h-8 object-contain" />
-              <img src="/placeholder.svg?height=60&width=150" alt="Fitness Magazine" className="h-8 object-contain" />
-              <img src="/placeholder.svg?height=60&width=150" alt="GQ" className="h-8 object-contain" />
-              <img src="/placeholder.svg?height=60&width=150" alt="ESPN" className="h-8 object-contain" />
+              <img src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_191044.png" alt="Men's Health" className="h-8 object-contain" />
+              <img src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_190909.png" alt="Fitness Magazine" className="h-8 object-contain" />
+              <img src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_191114.png" alt="GQ" className="h-8 object-contain" />
+              <img src="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_191044.png" alt="ESPN" className="h-8 object-contain" />
             </div>
           </div>
         </div>
@@ -155,7 +152,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <TestimonialCard
                 name="Rahul M."
-                image="/placeholder.svg?height=400&width=300"
+                image="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_185415.jpg"
                 quote="Lost 25kg in 6 months while gaining muscle. The customized approach made all the difference."
                 stats={[
                   { label: "Weight Lost", value: "25kg" },
@@ -165,7 +162,7 @@ export default function Home() {
               />
               <TestimonialCard
                 name="Priya S."
-                image="/placeholder.svg?height=400&width=300"
+                image="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_185348.jpg"
                 quote="From struggling with basics to deadlifting 100kg. The strength progression was incredible."
                 stats={[
                   { label: "Strength Increase", value: "210%" },
@@ -175,7 +172,7 @@ export default function Home() {
               />
               <TestimonialCard
                 name="Vikram J."
-                image="/placeholder.svg?height=400&width=300"
+                image="https://raw.githubusercontent.com/RaviTechStack/Elitefit/refs/heads/main/images/20250325_185246.jpg"
                 quote="Competing in my first physique show at 42. Never thought it was possible at my age."
                 stats={[
                   { label: "Stage Weight", value: "78kg" },

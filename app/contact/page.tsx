@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import axios from "axios"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -18,31 +18,31 @@ import { useToast } from "@/components/ui/use-toast"
 
 export default function ContactPage() {
   const searchParams = useSearchParams()
-  const service = searchParams.get("service")
-  const plan = searchParams.get("plan")
+  const service_intrest = searchParams.get("service")
+  const pacakage_intrest = searchParams.get("plan")
   const { toast } = useToast()
-
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fname: "",
+    lname: "",
     email: "",
     phone: "",
-    consultationType: "video",
-    preferredDate: "",
-    preferredTime: "",
-    goals: "",
-    service: service || "",
-    plan: plan || "",
+    consultation_type: "video",
+    preferred_date: "",
+    preferred_time: "",
+    message: "",
+    service_intrest: service_intrest || "",
+    pacakage_intrest: pacakage_intrest || "",
   })
 
   useEffect(() => {
-    if (service) {
-      setFormData((prev) => ({ ...prev, service }))
+    if (service_intrest) {
+      setFormData((prev) => ({ ...prev, service_intrest }))
     }
-    if (plan) {
-      setFormData((prev) => ({ ...prev, plan }))
+    if (pacakage_intrest) {
+      setFormData((prev) => ({ ...prev, pacakage_intrest }))
     }
-  }, [service, plan])
+  }, [service_intrest, pacakage_intrest])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -53,29 +53,40 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-
-    // Show success toast
-    toast({
-      title: "Consultation Booked!",
-      description: "We'll contact you shortly to confirm your appointment.",
-    })
-
-    // Reset form (optional)
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      consultationType: "video",
-      preferredDate: "",
-      preferredTime: "",
-      goals: "",
-      service: "",
-      plan: "",
-    })
+  const handleSubmit = async(e: React.FormEvent) => {
+    try {
+      e.preventDefault()
+      console.log("Form submitted:", formData)
+      toast({
+        title: "Consultation Booked!",
+        description: "We'll contact you shortly to confirm your appointment.",
+      })
+      const response = await axios.post(`${apiUrl}`, formData, {
+        headers: { "Content-Type": "application/json" },
+      });
+      
+  
+      // Reset form (optional)
+      setFormData({
+        fname: "",
+        lname: "",
+        email: "",
+        phone: "",
+        consultation_type: "video",
+        preferred_date: "",
+        preferred_time: "",
+        message: "",
+        service_intrest: "",
+        pacakage_intrest: "",
+      })
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      
+      toast({
+        title: "Submission Failed",
+        description: "Something went wrong. Please try again later.",
+      });
+    }
   }
 
   return (
@@ -207,7 +218,7 @@ export default function ContactPage() {
                         </ul>
                       </div>
                       <Link
-                        href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20your%20fitness%20coaching%20services."
+                        href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20your%20fitness%20coaching%20service_intrests."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center mt-4 text-green-500 hover:text-green-400"
@@ -229,7 +240,7 @@ export default function ContactPage() {
                     "Analysis of your training history and experience",
                     "Nutritional assessment and recommendations",
                     "Overview of our coaching methodology",
-                    "Customized plan proposal for your specific needs",
+                    "Customized pacakage_intrest proposal for your specific needs",
                     "Transparent pricing and package details",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
@@ -258,10 +269,10 @@ export default function ContactPage() {
                         <Label htmlFor="first-name">First Name</Label>
                         <Input
                           id="first-name"
-                          name="firstName"
-                          value={formData.firstName}
+                          name="fname"
+                          value={formData.fname}
                           onChange={handleChange}
-                          placeholder="John"
+                          placeholder="Ravi"
                           className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700"
                           required
                         />
@@ -270,10 +281,10 @@ export default function ContactPage() {
                         <Label htmlFor="last-name">Last Name</Label>
                         <Input
                           id="last-name"
-                          name="lastName"
-                          value={formData.lastName}
+                          name="lname"
+                          value={formData.lname}
                           onChange={handleChange}
-                          placeholder="Doe"
+                          placeholder="Singh"
                           className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700"
                           required
                         />
@@ -288,7 +299,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         type="email"
-                        placeholder="john@example.com"
+                        placeholder="ravi@example.com"
                         className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700"
                         required
                       />
@@ -310,8 +321,8 @@ export default function ContactPage() {
                     <div className="space-y-2">
                       <Label htmlFor="consultation-type">Consultation Type</Label>
                       <Select
-                        value={formData.consultationType}
-                        onValueChange={(value) => handleSelectChange("consultationType", value)}
+                        value={formData.consultation_type}
+                        onValueChange={(value) => handleSelectChange("consultation_type", value)}
                       >
                         <SelectTrigger className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700">
                           <SelectValue placeholder="Select type" />
@@ -325,24 +336,24 @@ export default function ContactPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="service">Service Interest</Label>
-                      <Select value={formData.service} onValueChange={(value) => handleSelectChange("service", value)}>
+                      <Label htmlFor="service_intrest">service_intrest Interest</Label>
+                      <Select value={formData.service_intrest} onValueChange={(value) => handleSelectChange("service_intrest", value)}>
                         <SelectTrigger className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700">
-                          <SelectValue placeholder="Select service" />
+                          <SelectValue placeholder="Select service_intrest" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="strength">Strength Training</SelectItem>
-                          <SelectItem value="fat-loss">Fat Loss & Transformation</SelectItem>
-                          <SelectItem value="nutrition">Custom Diet Plans</SelectItem>
-                          <SelectItem value="online">Online Coaching</SelectItem>
-                          <SelectItem value="not-sure">Not Sure Yet</SelectItem>
+                          <SelectItem value="weight_loss">Fat Loss & Transformation</SelectItem>
+                          <SelectItem value="custom diet">Custom Diet plan</SelectItem>
+                          <SelectItem value="online coaching">Online Coaching</SelectItem>
+                          <SelectItem value="not sure">Not Sure Yet</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="plan">Package Interest</Label>
-                      <Select value={formData.plan} onValueChange={(value) => handleSelectChange("plan", value)}>
+                      <Label htmlFor="pacakage_intrest">Package Interest</Label>
+                      <Select value={formData.pacakage_intrest} onValueChange={(value) => handleSelectChange("pacakage_intrest", value)}>
                         <SelectTrigger className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700">
                           <SelectValue placeholder="Select package" />
                         </SelectTrigger>
@@ -350,7 +361,7 @@ export default function ContactPage() {
                           <SelectItem value="basic">Basic Package (₹12,999/month)</SelectItem>
                           <SelectItem value="premium">Premium Package (₹24,999/month)</SelectItem>
                           <SelectItem value="vip">VIP Package (₹49,999/month)</SelectItem>
-                          <SelectItem value="not-sure">Not Sure Yet</SelectItem>
+                          <SelectItem value="not sure">Not Sure Yet</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -363,8 +374,8 @@ export default function ContactPage() {
                         </Label>
                         <Input
                           type="date"
-                          name="preferredDate"
-                          value={formData.preferredDate}
+                          name="preferred_date"
+                          value={formData.preferred_date}
                           onChange={handleChange}
                           className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700"
                           required
@@ -377,8 +388,8 @@ export default function ContactPage() {
                         </Label>
                         <Input
                           type="time"
-                          name="preferredTime"
-                          value={formData.preferredTime}
+                          name="preferred_time"
+                          value={formData.preferred_time}
                           onChange={handleChange}
                           className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700"
                           required
@@ -390,8 +401,8 @@ export default function ContactPage() {
                       <Label htmlFor="goals">Your Fitness Goals</Label>
                       <Textarea
                         id="goals"
-                        name="goals"
-                        value={formData.goals}
+                        name="message"
+                        value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your fitness goals and what you hope to achieve..."
                         className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 min-h-[100px]"
@@ -411,7 +422,7 @@ export default function ContactPage() {
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
                     By submitting this form, you agree to our{" "}
                     <Link href="/terms" className="text-blue-500 hover:underline">
-                      Terms of Service
+                      Terms of service_intrest
                     </Link>{" "}
                     and{" "}
                     <Link href="/privacy" className="text-blue-500 hover:underline">
@@ -530,7 +541,7 @@ export default function ContactPage() {
                     "Yes, we offer home workout options with minimal equipment requirements. During the consultation, we'll discuss your available equipment and design a program accordingly.",
                 },
                 {
-                  question: "How is this different from other coaching services?",
+                  question: "How is this different from other coaching service_intrests?",
                   answer:
                     "Our approach combines scientific training principles with personalized attention. We don't use templates - every program is built from scratch based on your specific needs, goals, and lifestyle.",
                 },

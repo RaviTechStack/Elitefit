@@ -54,12 +54,12 @@ export default function Header() {
           >
             Services
           </Link>
-          <Link
+          {/* <Link
             href="/blog"
             className={`text-sm font-medium hover:text-blue-400 transition-colors ${pathname === "/blog" ? "text-blue-400" : ""}`}
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
             className={`text-sm font-medium hover:text-blue-400 transition-colors ${pathname === "/contact" ? "text-blue-400" : ""}`}

@@ -14,7 +14,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['github.com', 'raw.githubusercontent.com'], // Add GitHub domains here
   },
   experimental: {
     webpackBuildWorker: true,
